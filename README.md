@@ -1,7 +1,7 @@
 # HeadPoseEstimation
 This project involves head pose estimation using CNN + attention. The task is to estimate Yaw, Pitch and Roll as a Regression task (Currently in the development stage).
 
-**HeadPoseEstimation_V3** is the most recent notebook showing our progress in which we have obtained a training loss of around 4 and validstion loss of around 7.5
+**HeadPoseEstimation_V3** is the most recent notebook showing our progress in which we have obtained a training loss of 1.468335 and validation loss of around 5.7043113060569395
 We are using L1 loss keeping the training batch size of 16 and validation batch size of 4. 
 We have trained the model on efficient-net b3.
 
