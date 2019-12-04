@@ -12,3 +12,6 @@ We have trained the model on BIWI. We have acquired the AFLW2000 dataset. Traini
 We have manually found out the ideal crop size for each person and have cropped out the faces and created the dataset on which training has been done.
 # Cropped Images Link
 https://drive.google.com/open?id=13pca-FDOiFsGKEo1Z9YL73LdYNBorNdm
+
+#Evaluation protocl
+Follow the evaluation protocol in FSA-Net https://github.com/shamangary/FSA-Net (CVPR 2019)
