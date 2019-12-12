@@ -22,7 +22,7 @@ https://github.com/MingzhenShao/HeadPose#datasets
 https://github.com/natanielruiz/deep-head-pose
 https://github.com/natanielruiz/deep-head-pose/blob/master/code/datasets.py
 
-#Insert self-attention/Attention
+# Insert self-attention/Attention
 The loss function should be computed separately Yaw, Pitch and Roll using three channel.
 Use self-attention funtion from below github and add to the model (using glimpse?)
 https://github.com/heykeetae/Self-Attention-GAN
