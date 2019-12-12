@@ -15,3 +15,9 @@ https://drive.google.com/open?id=13pca-FDOiFsGKEo1Z9YL73LdYNBorNdm
 
 # Evaluation protocol
 Follow the evaluation protocol in FSA-Net https://github.com/shamangary/FSA-Net (CVPR 2019)
+
+# Head pose dataset with image crop information
+https://github.com/MingzhenShao/HeadPose#datasets
+
+https://github.com/natanielruiz/deep-head-pose
+https://github.com/natanielruiz/deep-head-pose/blob/master/code/datasets.py
