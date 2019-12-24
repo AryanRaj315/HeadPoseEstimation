@@ -7,7 +7,7 @@ device = torch.device("cuda" if use_cuda else "cpu")
 
 
 class AugmentedConv(nn.Module):
-    def __init__(self, in_channels, out_channels, kernel_size, dk, dv, Nh, shape=0, relative=False, stride=1):
+    def __init__(self, in_channels, out_channels, kernel_size, dk, dv, Nh, shape=0, relative=False, stride=1, bias = False):
         super(AugmentedConv, self).__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
@@ -25,11 +25,11 @@ class AugmentedConv(nn.Module):
         assert self.dv % self.Nh == 0, "dv should be divided by Nh. (example: out_channels: 20, dv: 4, Nh: 4)"
         assert stride in [1, 2], str(stride) + " Up to 2 strides are allowed."
 
-        self.conv_out = nn.Conv2d(self.in_channels, self.out_channels - self.dv, self.kernel_size, stride=stride, padding=self.padding)
+        self.conv_out = nn.Conv2d(self.in_channels, self.out_channels - self.dv, self.kernel_size, stride=stride, padding=self.padding, bias = False)
 
-        self.qkv_conv = nn.Conv2d(self.in_channels, 2 * self.dk + self.dv, kernel_size=self.kernel_size, stride=stride, padding=self.padding)
+        self.qkv_conv = nn.Conv2d(self.in_channels, 2 * self.dk + self.dv, kernel_size=self.kernel_size, stride=stride, padding=self.padding, bias = False)
 
-        self.attn_out = nn.Conv2d(self.dv, self.dv, kernel_size=1, stride=1)
+        self.attn_out = nn.Conv2d(self.dv, self.dv, kernel_size=1, stride=1, bias = False)
 
         if self.relative:
             self.key_rel_w = nn.Parameter(torch.randn((2 * self.shape - 1, dk // Nh), requires_grad=True))
