@@ -1,0 +1,3 @@
+[submodule "EfficientNet-PyTorch"]
+	path = EfficientNet-PyTorch
+	url = https://github.com/AryanRaj315/EfficientNet-PyTorch
