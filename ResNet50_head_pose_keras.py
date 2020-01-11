@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jan 06 20:33:32 2020
+<<<<<<< HEAD
+=======
+
+>>>>>>> a778c65b3e0840cab83e18cdd839e092c19f4835
 @author: Ardhendu
 """
 
@@ -220,4 +224,9 @@ lossWeights = {"Yaw_output": 1.0, "Pitch_output": 1.0, "Roll_output": 1.0}
 model = Model(inputs=model.input, outputs=[x,y,z])
 
 model.compile(loss=loss_type, loss_weights=lossWeights, metrics=metrics, optimizer=optimizer)
+<<<<<<< HEAD
    
+=======
+   
+
+>>>>>>> a778c65b3e0840cab83e18cdd839e092c19f4835
