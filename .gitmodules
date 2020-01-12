@@ -1,3 +1,6 @@
 [submodule "EfficientNet-PyTorch"]
 	path = EfficientNet-PyTorch
 	url = https://github.com/AryanRaj315/EfficientNet-PyTorch
+[submodule "HeadPoseEstimation"]
+	path = HeadPoseEstimation
+	url = https://github.com/AryanRaj315/vision.git
