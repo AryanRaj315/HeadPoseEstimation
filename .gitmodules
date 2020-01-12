@@ -4,3 +4,6 @@
 [submodule "HeadPoseEstimation"]
 	path = HeadPoseEstimation
 	url = https://github.com/AryanRaj315/vision.git
+[submodule "vision"]
+	path = vision
+	url = https://github.com/AryanRaj315/vision.git
