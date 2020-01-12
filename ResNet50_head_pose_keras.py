@@ -128,7 +128,7 @@ def conv_block(input_tensor,
     x = layers.Activation('relu')(x)
     return x
 
-def resnet_block5_weights(model, tensor_b1):
+def resnet_block5_weights(model, tensor_b1, base_layer):
     #tensor_b1 = layers.Input(shape=(14, 14, 1024))
     #base_out = layers.Input(shape=(14, 14, 1024))
     x = conv_block(tensor_b1, 3, [512, 512, 2048], stage=5, block='a')
@@ -195,9 +195,9 @@ base_out = model.layers[base_layer].output #tapped output before block5
 tensor_yaw = layers.Input(shape=(14, 14, 1024)) #Input to the parallal stream
 tensor_pitch = layers.Input(shape=(14, 14, 1024)) #Input to the parallal stream
 tensor_roll = layers.Input(shape=(14, 14, 1024)) #Input to the parallal stream
-yaw = resnet_block5_weights(model,tensor_yaw)
-pitch = resnet_block5_weights(model,tensor_pitch)
-roll = resnet_block5_weights(model,tensor_roll)
+yaw = resnet_block5_weights(model,tensor_yaw, base_layer)
+pitch = resnet_block5_weights(model,tensor_pitch, base_layer)
+roll = resnet_block5_weights(model,tensor_roll, base_layer)
 
 x = yaw(base_out)
 x = layers.Dense(1, activation='tanh', name="Yaw_output")(x)
